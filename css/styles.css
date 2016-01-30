@@ -1,0 +1,37 @@
+@value colors: './colors.css';
+@value first, second, third from colors;
+
+
+.title {
+  composes: title from './mixins.css';
+}
+
+.article {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.figure {
+  composes: figure from './mixins.css';
+  margin: 40px 0;
+}
+
+.image {
+  max-width: 80%;
+}
+
+.first {
+  composes: paragraph from './mixins.css';
+}
+
+.first {
+  color: first;
+}
+
+.second {
+  color: second;
+}
+
+.third {
+  color: third;
+}
