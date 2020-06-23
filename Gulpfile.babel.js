@@ -29,11 +29,11 @@ gulp.task('css', () => {
 });
 
 
-gulp.task('html', ['css'], () => {
+gulp.task('html', gulp.series('css', () => {
   return gulp.src('./html/index.ejs')
     .pipe(ejs({ className: getClass }, { ext: '.html' }))
     .pipe(gulp.dest('./build'));
-});
+}));
 
 
-gulp.task('default', ['html']);
+gulp.task('default', gulp.series('html'));
